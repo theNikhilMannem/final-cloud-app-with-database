@@ -78,17 +78,19 @@
                            <td>{{ choice.choice_text }}  </td>
                            
                            
-                          <td style='background-color:{% for key, value in c_results.items %}
+                          <td style='background-color:
+                                {% for key, value in c_results.items %}
                                     {% if choice.id == key %}
-                                    {% if value == True %}
-                                    palegreen
-                                    {% else %}
-                                    lightpink
-  
-                                 {% endif %}
+                                        {% if value == True %}
+                                            palegreen
+                                        {% else %}
+                                            lightpink
+    
                                         {% endif %}
-                                {% endfor %}'>Right choice:
-                                b> {{ choice.is_correct}} </b>
+                                    {% endif %}
+                                {% endfor %}'>
+                                    Right choice:
+                                <b> {{ choice.is_correct}} </b>
 
                           <br> Your choice: <b>
                             {% for key, value0 in c_submits.items %}
